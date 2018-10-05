@@ -1,3 +1,5 @@
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,10 +8,22 @@
 
 package paneles;
 
+import A_alertas.principal.ErrorAlert;
+import A_alertas.principal.SuccessAlert;
+import A_alertas.principal.WarningBackup;
+import A_alertas.principal.WarningRestore;
+import RespaldoBD.BackupMySQL;
+import RespaldoBD.CargandoRestore;
+import Template.Principal_Norm;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.io.File;
+import javafx.stage.FileChooser;
 import javax.swing.BorderFactory;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.border.EtchedBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import paneles.Barras.pnlBarras;
 import paneles.Productos.pnlProducto;
 import paneles.Proveedores.pnlProveedor;
@@ -29,6 +43,48 @@ public class pnlProcesos extends javax.swing.JPanel {
     public pnlProcesos() {
         initComponents();
     }
+    
+    
+    
+    public static File existe = null;
+
+    private void RestoreBackup() {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setCurrentDirectory(new java.io.File("Respaldos/"));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos SQL (*.sql)", "sql");
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        fileChooser.setFileFilter(filter);
+        fileChooser.setDialogTitle("SELECCIONAR RESPALDO");
+        if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            existe = fileChooser.getSelectedFile();
+            if (existe.exists()) {
+
+                WarningRestore a = new WarningRestore();
+                a.msj1.setText("Has seleccionado un respaldo y la aplicación");
+                a.msj2.setText("se reiniciara al terminar de restaurar la");
+                a.msj3.setText("Base de Datos. Se recomienda que haga");
+                a.msj4.setText("un respaldo antes de continuar.");
+                a.lblTipo.setText("Restaurar");
+                a.lblTipo.setVisible(false);
+                a.setVisible(true);
+
+                if (a.continuar) {
+                    CargandoRestore a = new CargandoRestore();
+                    a.setVisible(true);
+                    a.dispose();
+                    new splash.SplashScreen().setVisible(true);
+                }
+
+            } else {
+                ErrorAlert a = new ErrorAlert(this, true);
+                a.msj.setText("Archivo no encontrado.");
+                a.msj1.setText("");
+                a.setVisible(true);
+            }
+        }
+        new ConexionBD().conexion();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -190,7 +246,7 @@ public class pnlProcesos extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/importar excel.PNG"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/respaldo - copia.PNG"))); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setText("  Importar");
@@ -199,21 +255,21 @@ public class pnlProcesos extends javax.swing.JPanel {
         panelarticulos.setLayout(panelarticulosLayout);
         panelarticulosLayout.setHorizontalGroup(
             panelarticulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelarticulosLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
             .addGroup(panelarticulosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelarticulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                    .addGroup(panelarticulosLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelarticulosLayout.setVerticalGroup(
             panelarticulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelarticulosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -331,25 +387,19 @@ public class pnlProcesos extends javax.swing.JPanel {
     }//GEN-LAST:event_panelgenerarMousePressed
 
     private void panelcomprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelcomprasMouseClicked
-        pnlCompras vent=new pnlCompras();
-        vent.setSize(640,570);
-        vent.setLocation(0,0);
-        
-        pnlOperaciones.removeAll();
-        pnlOperaciones.add(vent,BorderLayout.CENTER);
-        pnlOperaciones.revalidate();
-        pnlOperaciones.repaint();
+        if (!Template.Principal_Norm.info.getText().equals("USUARIO")) {
+            GeneraBackup();
+        }else{
+            ErrorAlert a = new ErrorAlert(new JFrame(), true);
+            a.titulo.setText("Sin acceso.");
+            a.msj.setText("");
+            a.msj1.setText("");
+            a.setVisible(true);
+        }
     }//GEN-LAST:event_panelcomprasMouseClicked
 
     private void panelarticulosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelarticulosMouseClicked
-        pnlProducto vent=new pnlProducto();
-        vent.setSize(640,570);
-        vent.setLocation(0,0);
-        
-        pnlOperaciones.removeAll();
-        pnlOperaciones.add(vent,BorderLayout.CENTER);
-        pnlOperaciones.revalidate();
-        pnlOperaciones.repaint();
+       
     }//GEN-LAST:event_panelarticulosMouseClicked
 
     private void panelfacturaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfacturaMouseReleased
@@ -363,7 +413,14 @@ public class pnlProcesos extends javax.swing.JPanel {
     private void panelfacturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelfacturaMouseEntered
         panelfactura.setBorder(new EtchedBorder(EtchedBorder.RAISED,Color.red,Color.black));
     }//GEN-LAST:event_panelfacturaMouseEntered
+    private void GeneraBackup() {
+        WarningBackup a = new WarningBackup(null, true);
+        a.setVisible(true);
 
+        if (a.txtNombre.getText().length() != 0) {
+            new BackupMySQL().exportDB(a.txtNombre.getText());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;

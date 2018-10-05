@@ -7,8 +7,8 @@
 package paneles.Proveedores;
 
 import A_alertas.principal.AWTUtilities;
-import A_alertas.principal.ErrorAlert;
 import A_alertas.principal.SuccessAlert;
+import A_alertas.principal.WarningAlert;
 import java.awt.Cursor;
 import java.awt.MouseInfo;
 import java.awt.Point;
@@ -322,7 +322,7 @@ public class Proveedor extends javax.swing.JDialog {
                 || this.txtDireccion.getText().equals("") || this.txtNumero.getText().equals("") 
                 || this.txtEmail.getText().equals("")) 
         {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("Hay campos vacios");
             er.msj1.setText("Favor de llenarlos");
@@ -334,7 +334,7 @@ public class Proveedor extends javax.swing.JDialog {
 
                 if (Opciones.verificaProveedor(this.txtRfc.getText())
                     && !this.txtRfc.getText().equals(this.nombrePro.getText())) {
-                    ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                    WarningAlert er = new WarningAlert(new JFrame(), true);
                     er.titulo.setText("Mensaje");
                     er.msj.setText("El nombre de usuario");
                     er.msj1.setText("Ya éxiste");
@@ -361,7 +361,7 @@ public class Proveedor extends javax.swing.JDialog {
                 }
             } else {
                 if (Opciones.verificaProveedor(this.txtRfc.getText())) {
-                    ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                    WarningAlert er = new WarningAlert(new JFrame(), true);
                     er.titulo.setText("Mensaje");
                     er.msj.setText("El nombre de usuario");
                     er.msj1.setText("Ya éxiste");
@@ -396,8 +396,9 @@ public class Proveedor extends javax.swing.JDialog {
      if (this.txtRfc.getText().equals("") || this.txtNombre.getText().equals("") 
                 || this.txtDireccion.getText().equals("") || this.txtNumero.getText().equals("") 
                 || this.txtEmail.getText().equals("")
-        ) {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+        ) 
+        {
+         WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("Hay campos vacios");
             er.msj1.setText("Favor de llenarlos");
@@ -405,11 +406,12 @@ public class Proveedor extends javax.swing.JDialog {
 
         } else {
 
+
             if (this.registrar.getText().equals("Guardar")) {
 
                 if (Opciones.verificaProveedor(nombrePro.getText())
                     && !this.txtRfc.getText().equals(this.txtRfc.getText())) {
-                    ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                    WarningAlert er = new WarningAlert(new JFrame(), true);
                     er.titulo.setText("Mensaje");
                     er.msj.setText("El nombre de usuario");
                     er.msj1.setText("Ya éxiste");
@@ -436,7 +438,7 @@ public class Proveedor extends javax.swing.JDialog {
                 }
             } else {
                 if (Opciones.verificaProveedor(this.txtRfc.getText())) {
-                    ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                    WarningAlert er = new WarningAlert(new JFrame(), true);
                     er.titulo.setText("Mensaje");
                     er.msj.setText("El nombre de usuario");
                     er.msj1.setText("Ya éxiste");

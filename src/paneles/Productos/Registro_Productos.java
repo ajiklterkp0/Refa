@@ -578,7 +578,7 @@ public class Registro_Productos extends javax.swing.JDialog {
                 || this.txtPrecioCompra.getText().equals("")
                 || this.txtPrecioVenta.getText().equals("")) {
 
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("Hay campos vacios");
             er.msj1.setText("Favor de llenarlos");

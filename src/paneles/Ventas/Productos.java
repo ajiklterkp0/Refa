@@ -7,7 +7,6 @@
 package paneles.Ventas;
 
 import A_alertas.principal.AWTUtilities;
-import A_alertas.principal.ErrorAlert;
 import A_alertas.principal.WarningAlert;
 import A_tabla.EstiloTablaHeader;
 import A_tabla.EstiloTablaRenderer;
@@ -363,7 +362,7 @@ public class Productos extends javax.swing.JDialog {
                 
             }
         } else {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("No se han encontrado");
                 er.msj1.setText("Registros");

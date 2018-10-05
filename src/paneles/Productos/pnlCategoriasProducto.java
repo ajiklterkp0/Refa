@@ -311,14 +311,14 @@ public class pnlCategoriasProducto extends javax.swing.JPanel {
 
     private void pnlremoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlremoverMouseClicked
         if (this.tabla.getRowCount() < 1) {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("La tabla esta ");
             er.msj1.setText("vacía");
             er.setVisible(true);
         } else {
             if (this.tabla.getSelectedRowCount() < 1) {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("Seleccione almenos un");
                 er.msj1.setText("registro");
@@ -327,7 +327,7 @@ public class pnlCategoriasProducto extends javax.swing.JPanel {
                 int fila = this.tabla.getSelectedRow();
 
                 if (this.tabla.getValueAt(fila, 0).toString().equals("1")) {
-                    ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                    WarningAlert er = new WarningAlert(new JFrame(), true);
                     er.titulo.setText("Mensaje");
                     er.msj.setText("No tiene permitido eliminar");
                     er.msj1.setText("este usuario");
@@ -346,14 +346,14 @@ public class pnlCategoriasProducto extends javax.swing.JPanel {
 
     private void pnlmodificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlmodificarMouseClicked
         if (this.tabla.getRowCount() < 1) {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("La tabla actualmente");
             er.msj1.setText("esta vacia");
             er.setVisible(true);
         } else {
             if (this.tabla.getSelectedRowCount() < 1) {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("Seleccione al menos un");
                 er.msj1.setText("Registro");

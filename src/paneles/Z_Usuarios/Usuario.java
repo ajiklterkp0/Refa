@@ -366,7 +366,7 @@ public class Usuario extends javax.swing.JDialog {
         if (this.txtNombre.getText().equals("") || this.txtApellido_P.getText().equals("") || this.txtApellido_M.getText().equals("") || this.txtDireccion.getText().equals("") || this.txtNumero.getText().equals("") || this.txtPassword.getText().equals("")
             || this.tipo.getSelectedIndex() == 0) 
         {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("Hay campos vacios");
             er.msj1.setText("Favor de llenarlos");
@@ -374,7 +374,7 @@ public class Usuario extends javax.swing.JDialog {
 
         } else {
             if (this.txtPassword.getText().length() <= 7) {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("mensaje");
                 er.msj.setText("La contraseña debe tener");
                 er.msj1.setText("minimo 8 caracteres");
@@ -385,7 +385,7 @@ public class Usuario extends javax.swing.JDialog {
 
                     if (Opciones.verificaUsuario(this.txtUsuario.getText())
                         && !this.txtUsuario.getText().equals(this.nombreUs.getText())) {
-                        ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                        WarningAlert er = new WarningAlert(new JFrame(), true);
                         er.titulo.setText("Mensaje");
                         er.msj.setText("El nombre de usuario");
                         er.msj1.setText("Ya éxiste");
@@ -415,7 +415,7 @@ public class Usuario extends javax.swing.JDialog {
                     }
                 } else {
                     if (Opciones.verificaUsuario(this.txtUsuario.getText())) {
-                        ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                        WarningAlert er = new WarningAlert(new JFrame(), true);
                         er.titulo.setText("Mensaje");
                         er.msj.setText("El nombre de usuario");
                         er.msj1.setText("Ya éxiste");
@@ -453,7 +453,7 @@ public class Usuario extends javax.swing.JDialog {
              if (this.txtNombre.getText().equals("") || this.txtApellido_P.getText().equals("") || this.txtApellido_M.getText().equals("") || this.txtNombre.getText().equals("") || this.txtDireccion.getText().equals("") || this.txtNumero.getText().equals("")
             || this.tipo.getSelectedIndex() == 0) {
 
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("Hay campos vacios");
             er.msj1.setText("Favor de llenarlos");
@@ -461,7 +461,7 @@ public class Usuario extends javax.swing.JDialog {
 
         } else {
             if (this.txtPassword.getText().length() <= 7) {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("mensaje");
                 er.msj.setText("La contraseña debe tener");
                 er.msj1.setText("minimo 8 caracteres");
@@ -472,7 +472,7 @@ public class Usuario extends javax.swing.JDialog {
 
                     if (Opciones.verificaUsuario(this.txtUsuario.getText())
                         && !this.txtUsuario.getText().equals(this.nombreUs.getText())) {
-                        ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                        WarningAlert er = new WarningAlert(new JFrame(), true);
                         er.titulo.setText("Mensaje");
                         er.msj.setText("El nombre de usuario");
                         er.msj1.setText("Ya éxiste");
@@ -502,7 +502,7 @@ public class Usuario extends javax.swing.JDialog {
                     }
                 } else {
                     if (Opciones.verificaUsuario(this.txtUsuario.getText())) {
-                        ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                        WarningAlert er = new WarningAlert(new JFrame(), true);
                         er.titulo.setText("Mensaje");
                         er.msj.setText("El nombre de usuario");
                         er.msj1.setText("Ya éxiste");

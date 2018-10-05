@@ -5,7 +5,7 @@
  */
 package B_control;
 
-import A_alertas.principal.ErrorAlert;
+import A_alertas.principal.WarningAlert;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -40,7 +40,7 @@ public class Control {
             long tiempo = leer();
             long res = restarTiempo(tiempo);
             if (res < segundos) {
-                ErrorAlert er = new ErrorAlert(null, true);
+                WarningAlert er = new WarningAlert(null, true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("Ya esta en ejecución");
                 er.msj1.setText("la aplicación");

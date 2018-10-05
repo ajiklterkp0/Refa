@@ -36,7 +36,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         //Fehca del sistema
         Date sistemaFech = new Date();
-        SimpleDateFormat formato = new SimpleDateFormat("dd MMMM yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MMMM/yyyy");
         fecha.setText(formato.format(sistemaFech));
 
         //Hora del sistema
@@ -132,6 +132,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         info.setBackground(new java.awt.Color(204, 204, 204));
         info.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         info.setForeground(new java.awt.Color(255, 255, 255));
+        info.setText("a");
         jPanel6.add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, 100, 20));
 
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
@@ -167,6 +168,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         cinco.setBackground(new java.awt.Color(239, 238, 244));
         cinco.setForeground(new java.awt.Color(128, 128, 131));
+        cinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/baseline_web_black_18dp.png"))); // NOI18N
         cinco.setText("Reportes");
         cinco.setColorHover(new java.awt.Color(204, 204, 204));
         cinco.setColorNormal(new java.awt.Color(239, 238, 244));
@@ -176,7 +178,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         cinco.setColorTextPressed(new java.awt.Color(128, 128, 131));
         cinco.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cinco.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        cinco.setIconTextGap(25);
+        cinco.setIconTextGap(20);
         cinco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 cincoMousePressed(evt);
@@ -190,7 +192,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         jPanel3.add(cinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 250, 50));
 
         uno.setForeground(new java.awt.Color(128, 128, 131));
-        uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
+        uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/baseline_home_black_18dp.png"))); // NOI18N
         uno.setText("Inicio");
         uno.setColorHover(new java.awt.Color(204, 204, 204));
         uno.setColorNormal(new java.awt.Color(204, 204, 204));
@@ -200,7 +202,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         uno.setColorTextPressed(new java.awt.Color(128, 128, 131));
         uno.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         uno.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        uno.setIconTextGap(25);
+        uno.setIconTextGap(20);
         uno.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 unoMousePressed(evt);
@@ -215,6 +217,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         dos.setBackground(new java.awt.Color(239, 238, 244));
         dos.setForeground(new java.awt.Color(128, 128, 131));
+        dos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/baseline_scatter_plot_black_18dp.png"))); // NOI18N
         dos.setText("Operaciones");
         dos.setColorHover(new java.awt.Color(204, 204, 204));
         dos.setColorNormal(new java.awt.Color(239, 238, 244));
@@ -224,7 +227,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         dos.setColorTextPressed(new java.awt.Color(128, 128, 131));
         dos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dos.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        dos.setIconTextGap(19);
+        dos.setIconTextGap(20);
         dos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 dosMousePressed(evt);
@@ -239,6 +242,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         cuatro.setBackground(new java.awt.Color(239, 238, 244));
         cuatro.setForeground(new java.awt.Color(128, 128, 131));
+        cuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/outline_description_black_18dp.png"))); // NOI18N
         cuatro.setText("Procesos");
         cuatro.setColorHover(new java.awt.Color(204, 204, 204));
         cuatro.setColorNormal(new java.awt.Color(239, 238, 244));
@@ -248,7 +252,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         cuatro.setColorTextPressed(new java.awt.Color(128, 128, 131));
         cuatro.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cuatro.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        cuatro.setIconTextGap(19);
+        cuatro.setIconTextGap(20);
         cuatro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 cuatroMousePressed(evt);
@@ -263,6 +267,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         tres.setBackground(new java.awt.Color(239, 238, 244));
         tres.setForeground(new java.awt.Color(128, 128, 131));
+        tres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/baseline_pageview_black_18dp.png"))); // NOI18N
         tres.setText("Consultas");
         tres.setColorHover(new java.awt.Color(204, 204, 204));
         tres.setColorNormal(new java.awt.Color(239, 238, 244));
@@ -272,7 +277,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         tres.setColorTextPressed(new java.awt.Color(128, 128, 131));
         tres.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         tres.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        tres.setIconTextGap(19);
+        tres.setIconTextGap(20);
         tres.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tresMousePressed(evt);
@@ -287,6 +292,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         seis.setBackground(new java.awt.Color(239, 238, 244));
         seis.setForeground(new java.awt.Color(128, 128, 131));
+        seis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/baseline_timeline_black_18dp.png"))); // NOI18N
         seis.setText("Estadisticas");
         seis.setColorHover(new java.awt.Color(204, 204, 204));
         seis.setColorNormal(new java.awt.Color(239, 238, 244));
@@ -296,7 +302,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         seis.setColorTextPressed(new java.awt.Color(128, 128, 131));
         seis.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         seis.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        seis.setIconTextGap(19);
+        seis.setIconTextGap(20);
         seis.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 seisMousePressed(evt);
@@ -311,6 +317,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         ocho.setBackground(new java.awt.Color(239, 238, 244));
         ocho.setForeground(new java.awt.Color(128, 128, 131));
+        ocho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/baseline_help_black_18dp.png"))); // NOI18N
         ocho.setText("Acerca de");
         ocho.setColorHover(new java.awt.Color(204, 204, 204));
         ocho.setColorNormal(new java.awt.Color(239, 238, 244));
@@ -320,7 +327,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         ocho.setColorTextPressed(new java.awt.Color(128, 128, 131));
         ocho.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ocho.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        ocho.setIconTextGap(19);
+        ocho.setIconTextGap(20);
         ocho.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 ochoMousePressed(evt);
@@ -335,6 +342,7 @@ public class Principal_Norm extends javax.swing.JFrame {
 
         siete.setBackground(new java.awt.Color(239, 238, 244));
         siete.setForeground(new java.awt.Color(128, 128, 131));
+        siete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/baseline_settings_applications_black_18dp.png"))); // NOI18N
         siete.setText("Configuración");
         siete.setColorHover(new java.awt.Color(204, 204, 204));
         siete.setColorNormal(new java.awt.Color(239, 238, 244));
@@ -344,7 +352,7 @@ public class Principal_Norm extends javax.swing.JFrame {
         siete.setColorTextPressed(new java.awt.Color(128, 128, 131));
         siete.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         siete.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        siete.setIconTextGap(19);
+        siete.setIconTextGap(20);
         siete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 sieteMousePressed(evt);

@@ -331,7 +331,7 @@ public class Registro_Compra extends javax.swing.JDialog {
                 ||  this.txtTotal.getText().equals("") 
                 || this.txtRuta.getText().equals("") || this.lblfecha.getText().equals(""))  {
 
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("Hay campos vacios");
             er.msj1.setText("Favor de llenarlos");
@@ -387,7 +387,7 @@ public class Registro_Compra extends javax.swing.JDialog {
                 || this.Fecha.getDate().equals("")|| this.txtTotal.getText().equals("") 
                 || this.txtRuta.getText().equals("")) {
 
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("Hay campos vacios");
             er.msj1.setText("Favor de llenarlos");

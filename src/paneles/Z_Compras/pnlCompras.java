@@ -6,7 +6,7 @@
 
 package paneles.Z_Compras;
 
-import A_alertas.principal.ErrorAlert;
+import A_alertas.principal.WarningAlert;
 import A_alertas.principal.WarningAlertG;
 import A_alertas.principal.WarningAlertP;
 import A_tabla.EstiloTablaHeader;
@@ -85,8 +85,7 @@ public class pnlCompras extends javax.swing.JPanel {
         lblTotal3 = new javax.swing.JLabel();
         buscar = new app.bolivia.swing.JCTextField();
         jLabel2 = new javax.swing.JLabel();
-        materialButtonCircle2 = new principal.MaterialButtonCircle();
-        materialButtonCircle3 = new principal.MaterialButtonCircle();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -313,11 +312,8 @@ public class pnlCompras extends javax.swing.JPanel {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/campo-buscar.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 210, -1));
 
-        materialButtonCircle2.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(materialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 50, 50));
-
-        materialButtonCircle3.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(materialButtonCircle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 50, 50));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/boton-print.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 570));
     }// </editor-fold>//GEN-END:initComponents
@@ -370,14 +366,14 @@ public class pnlCompras extends javax.swing.JPanel {
 
     private void pnlremoverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlremoverMouseClicked
         if (this.tabla.getRowCount() < 1) {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("No hay productos");
             er.msj1.setText("agregados a la venta");
             er.setVisible(true);
         } else {
             if (this.tabla.getSelectedRowCount() < 1) {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("Seleccione almenos un");
                 er.msj1.setText("registro");
@@ -396,14 +392,15 @@ public class pnlCompras extends javax.swing.JPanel {
 
     private void pnlmodificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlmodificarMouseClicked
        if (this.tabla.getRowCount() < 1) {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+           WarningAlert er = new WarningAlert(new JFrame(), true);
+            er.titulo.setText("Mensaje");
             er.titulo.setText("Mensaje");
             er.msj.setText("La tabla actualmente");
             er.msj1.setText("esta vacia");
             er.setVisible(true);
         } else {
             if (this.tabla.getSelectedRowCount() < 1) {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("Seleccione al menos un");
                 er.msj1.setText("Registro");
@@ -438,6 +435,7 @@ public class pnlCompras extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static app.bolivia.swing.JCTextField buscar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -456,8 +454,6 @@ public class pnlCompras extends javax.swing.JPanel {
     public static javax.swing.JLabel lblTotal1;
     public static javax.swing.JLabel lblTotal2;
     public static javax.swing.JLabel lblTotal3;
-    private principal.MaterialButtonCircle materialButtonCircle2;
-    private principal.MaterialButtonCircle materialButtonCircle3;
     private javax.swing.JPanel pnlagregar;
     private javax.swing.JPanel pnlmodificar;
     private javax.swing.JPanel pnlremover;

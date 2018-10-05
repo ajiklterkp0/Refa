@@ -468,7 +468,7 @@ public class Cobrar extends javax.swing.JDialog {
     private void cobrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cobrarActionPerformed
         if(lblefectivo.getText().equals(""))
         {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("No se ha registrado");
                 er.msj1.setText("el metodo de pago");

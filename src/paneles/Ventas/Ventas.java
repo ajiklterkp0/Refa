@@ -6,7 +6,7 @@
 
 package paneles.Ventas;
 
-import A_alertas.principal.ErrorAlert;
+import A_alertas.principal.WarningAlert;
 import A_tabla.EstiloTablaHeader;
 import A_tabla.EstiloTablaRenderer;
 import A_tabla.MyScrollbarUI;
@@ -346,7 +346,7 @@ public class Ventas extends javax.swing.JPanel {
         pnlprecio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel10.setText("     Precio");
+        jLabel10.setText("     Precios");
         pnlprecio.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 80, 20));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/A_Imagenes/precioc.PNG"))); // NOI18N
@@ -630,7 +630,7 @@ public class Ventas extends javax.swing.JPanel {
     private void pnlokMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlokMouseClicked
         if (this.tablaVentas.getRowCount() < 1)
         {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("No se han añadido articulos");
             er.msj1.setText("a la venta");
@@ -697,7 +697,7 @@ public class Ventas extends javax.swing.JPanel {
 
                 }
             } else {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("No se han encontrado");
                 er.msj1.setText("Registros");
@@ -745,14 +745,14 @@ public class Ventas extends javax.swing.JPanel {
 
     private void pnlcantidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlcantidadMouseClicked
         if (this.tablaVentas.getRowCount() < 1) {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("No hay productos");
             er.msj1.setText("agregados a la venta");
             er.setVisible(true);
         } else {
             if (this.tablaVentas.getSelectedRowCount() < 1) {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("Seleccione almenos un");
                 er.msj1.setText("registro");
@@ -779,14 +779,14 @@ public class Ventas extends javax.swing.JPanel {
                 modelo.removeRow(fila);
                 Opciones.calcular();
             } else {
-                ErrorAlert er = new ErrorAlert(new JFrame(), true);
+                WarningAlert er = new WarningAlert(new JFrame(), true);
                 er.titulo.setText("Mensaje");
                 er.msj.setText("Seleccione almenos un");
                 er.msj1.setText("producto agregado");
                 er.setVisible(true);
             }
         } else {
-            ErrorAlert er = new ErrorAlert(new JFrame(), true);
+            WarningAlert er = new WarningAlert(new JFrame(), true);
             er.titulo.setText("Mensaje");
             er.msj.setText("No hay registros");
             er.msj1.setText("para eliminar");
